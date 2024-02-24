@@ -41,6 +41,38 @@ nav h1{
     letter-spacing: -1px;
     color: #fff;
 }
+.menu-toggle{
+    display: none;
+    position: relative;
+}
+.menu-toggle span{
+    width: 24px;
+    height: 2px;
+    border-radius: 3px;
+    background-color: rgb(250, 219, 250);
+    transition: all 0.5s;
+}
+.menu-toggle input{
+    position: absolute;
+    width: 24px;
+    height: 16px;
+    z-index: 1;
+    opacity: 0;
+    cursor: pointer;
+}
+.menu-toggle input:checked ~ span:nth-child(2) {
+    background-color: #fff;
+    transform-origin: 0 0;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle input:checked ~ span:nth-child(3)  {
+    transform: scale(0);
+}
+.menu-toggle input:checked ~ span:last-child {
+    background-color: #fff;
+    transform-origin: 0 100%;
+    transform: rotate(-45deg) translate(-1px, 0px);
+}
 main{
     width: 100vw;
     height: 900px;
@@ -185,5 +217,75 @@ footer .footer__container{
 .footer__container .footer__copyright  a:hover{
     color: #E58411;
 }
+@media only screen and (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: -100%;
+        width: 50%;
+        height: 50vh;
+        margin-right: 20px;
+        border: 2px solid #ffffffba;
+        border-radius: 20px;
+        backdrop-filter: blur(5px);
+        justify-content: space-around;
+        align-items: center;
+        transition: all 0.5s;
+        
+    }
+    .menu-toggle{
+        display: flex;
+        width: 24px;
+        height: 16px;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    nav ul li{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        opacity: 100;
+    }
+    nav ul li:hover{
+        scale: 110%;
+    }
+    nav ul.slide{
+        right: 0;
+        transition: all 0.5s;
+    }
+    main .main__content h2{
+        font-size: 52px;
+        line-height: 120%;
+    }
+    main .main__content h3{
+        font-size: 18px;
+    }
+    .main__content .main-content__search-bar{
+        width: 250px;
+    }
+    .main__content .main-content__search-bar input{
+        font-size: 18px;
+    }
+    .main__content .main-content__search-bar button{
+        width: 72px;
+        height: 50px;
+    }
+    .footer__container .footer__body .logo-about{
+        width: 100%;
+    }
+    .footer__container .footer__body .footer-body__nav{
+        width: 100%;
+    }
+    .footer__container .footer__copyright{
+        flex-direction: column;
+        gap: 18px;
+    }
+}
+
 
 
