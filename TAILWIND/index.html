@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belajar Basic Utility 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/output.css">
+  <style>
+    #toggle:checked~label div.toggle-circle {
+      transform: translateX(12px);
+    }
+  </style>
+</head>
+
+<body class="dark:bg-slate-800 dark:text-slate-200">
+
+  <div class="flex justify-center">
+    <span class="text-sm text-slate-500 mr-2">Light</span>
+    <input type="checkbox" id="toggle" class="hidden">
+    <label for="toggle">
+      <div class="w-9 h-5 bg-slate-500 rounded-full flex items-center p-1 cursor-pointer">
+        <div class="w-4 h-4 bg-white rounded-full toggle-circle"></div>
+      </div>
+    </label>
+    <span class="text-sm text-slate-500 ml-2">Dark</span>
+  </div>
+
+  <section class="w-[900px] h-[300px] mx-auto my-10 flex border rounded-xl overflow-hidden dark:bg-slate-800 bg-white">
+    <div class="w-full">
+      <img class="w-full" src="https://source.unsplash.com/200x200" alt="">
+    </div>
+    <div class="flex flex-col gap-8 justify-center align-middle p-8 text-slate-900 dark:text-gray-300">
+      <div>
+        <q class="text-2xl">Tailwind CSS is the only framework that I've seen scale on large teams. It’s
+          easy to
+          customize, adapts
+          to
+          any design, and the build size is tiny. </q>
+      </div>
+      <div>
+        <h5 class="text-lg text-blue-600">Sarah Dayan</h5>
+        <p class="text-slate-600">Staff Engineer, Algolia</p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <script>
+    const checkbox = document.querySelector('#toggle');
+    const html = document.querySelector('html');
+    checkbox.addEventListener('click', function () {
+      checkbox.checked ? html.classList.add('dark') : html.classList.remove('dark');
+    })
+  </script>
+</body>
+
+</html>

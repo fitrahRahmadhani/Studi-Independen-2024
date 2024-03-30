@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .card {
+    @apply w-full rounded-lg overflow-hidden shadow-lg transition ease-in-out duration-500;
+  }
+}
