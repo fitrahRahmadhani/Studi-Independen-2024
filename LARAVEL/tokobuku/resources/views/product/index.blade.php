@@ -34,11 +34,15 @@
                 <tbody>
                   @foreach ($products as $product)
                   <tr>
-                    <td>{{ $product->id_produk }}</td>
+                    <td>{{ $product->id }}</td>
                     <td>{{ $product->nama_produk }}</td>
                     <td>{{ $product->harga_satuan }}</td>
                     <td>{{ $product->stok_jual }}</td>
                     <td>{{ $product->stok_pinjam }}</td>
+                    <td>
+                      <a href="{{ route('product.edit', $product->id) }}" class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
+                      <a href="" class="btn btn-danger btn-action delete-btn" onclick="return confirm('Data <?= $product['nama_produk']; ?> akan dihapus. Yakin?')"><i class="fas fa-trash"></i></a>
+                    </td>
                   </tr>
                   @endforeach
                 </tbody>
