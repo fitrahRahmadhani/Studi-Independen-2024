@@ -6,7 +6,7 @@
   <section class="section">
 
     <div class="section-header">
-      <h1>Halaman X</h1>
+      <h1>Data Produk</h1>
     </div>
 
     <div class="section-body">
@@ -15,7 +15,7 @@
           <div class="card-header">
             <h4>Manajemen Produk</h4>
             <div class="card-header-action">
-              <a href="/product/form" class="btn btn-primary">Tambah data buku</a>
+              <a href="{{ route('product.create') }}" class="btn btn-primary">Tambah data produk</a>
             </div>
           </div>
           <div class="card-body">
