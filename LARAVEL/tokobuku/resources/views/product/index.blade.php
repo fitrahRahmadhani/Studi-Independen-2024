@@ -41,7 +41,13 @@
                     <td>{{ $product->stok_pinjam }}</td>
                     <td>
                       <a href="{{ route('product.edit', $product->id) }}" class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                      <a href="" class="btn btn-danger btn-action delete-btn" onclick="return confirm('Data <?= $product['nama_produk']; ?> akan dihapus. Yakin?')"><i class="fas fa-trash"></i></a>
+                      <form action="{{ route('product.destroy', $product->id) }}" method="POST" class="d-inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-action delete-btn">
+                          <i class="fas fa-trash"></i>
+                        </button>
+                      </form>
                     </td>
                   </tr>
                   @endforeach
