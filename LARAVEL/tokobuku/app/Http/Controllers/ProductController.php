@@ -28,6 +28,8 @@ class ProductController extends Controller
         $product->stok_pinjam = $request->stok_pinjam;
         $product->save();
 
+        session()->flash('success', 'Data berhasil di tambahkan');
+
         return redirect('/product');
     }
 
@@ -49,6 +51,8 @@ class ProductController extends Controller
         $product->stok_pinjam = $request->stok_pinjam;
         $product->save();
 
+        session()->flash('info', 'Data berhasil di perbarui');
+
         return redirect('/product');
     }
 
@@ -56,6 +60,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $product->delete();
+        session()->flash('danger', 'Data berhasil di hapus');
         return redirect('/product');
     }
 }

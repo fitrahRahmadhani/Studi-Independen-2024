@@ -4,5 +4,9 @@
  * because it will make it harder for you to update.
  * 
  */
-
+#alert-custom {
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
 /*# sourceMappingURL=custom.css.map */

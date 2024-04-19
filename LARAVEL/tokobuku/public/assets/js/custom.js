@@ -4,5 +4,9 @@
  * because it will make it harder for you to update.
  *
  */
-
-"use strict";
+$("#alert-custom")
+    .fadeTo(5000, 1000)
+    .slideUp(1000, function () {
+        $("#alert-succ").slideUp(1000);
+    });
+("use strict");

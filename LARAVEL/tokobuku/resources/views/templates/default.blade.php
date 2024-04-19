@@ -63,6 +63,7 @@
 
       @yield('content')
 
+
       @include('templates.partials.footer')
     </div>
   </div>
