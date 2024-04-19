@@ -13,39 +13,39 @@
         @method('PUT')
         <div class="card-body">
           <div class="form-group disabled">
-            <label for="id_produk">ID Product</label>
-            <input type="text" class="form-control" id="id" name="id" value="{{ $product->id }}" required>
-            <div class="invalid-feedback">
-              ID produk tidak boleh kosong!
-            </div>
+            <label for="id">ID Product</label>
+            <input type="text" class="form-control @error('id') is-invalid @enderror" id="id" name="id" value="{{ $product->id }}" disabled>
+            @error('id')
+            <div class="alert alert-danger mt-1">{{ $message }}</div>
+            @enderror
           </div>
           <div class="form-group">
             <label for="nama">Nama</label>
-            <input type="text" class="form-control" id="nama_produk" name="nama_produk" value="{{ $product->nama_produk }}" required>
-            <div class="invalid-feedback">
-              Nama produk tidak boleh kosong!
-            </div>
+            <input type="text" class="form-control @error('nama_produk') is-invalid @enderror" id="nama_produk" name="nama_produk" value="{{ $product->nama_produk }}" required>
+            @error('nama_produk')
+            <div class="alert alert-danger mt-1">{{ $message }}</div>
+            @enderror
           </div>
           <div class="form-group">
             <label for="harga_satuan">@Harga satuan</label>
-            <input type="text" class="form-control" id="harga_satuan" name="harga_satuan" value="{{ $product->harga_satuan }}" required>
-            <div class="invalid-feedback">
-              Harga produk tidak boleh kosong!
-            </div>
+            <input type="text" class="form-control @error('harga_satuan') is-invalid @enderror" id="harga_satuan" name="harga_satuan" value="{{ $product->harga_satuan }}" required>
+            @error('harga_satuan')
+            <div class="alert alert-danger mt-1">{{ $message }}</div>
+            @enderror
           </div>
           <div class="form-group">
             <label for="stok_jual">Stok Jual</label>
-            <input type="text" class="form-control" id="stok_jual" name="stok_jual" value="{{ $product->stok_jual }}" required>
-            <div class="invalid-feedback">
-              Stok jual produk tidak boleh kosong!
-            </div>
+            <input type="text" class="form-control @error('stok_jual') is-invalid @enderror" id="stok_jual" name="stok_jual" value="{{ $product->stok_jual }}" required>
+            @error('stok_jual')
+            <div class="alert alert-danger mt-1">{{ $message }}</div>
+            @enderror
           </div>
           <div class="form-group mb-0">
             <label for="stok_pinjam">Stok Pinjam</label>
-            <input type="text" class="form-control" id="stok_pinjam" name="stok_pinjam" value="{{ $product->stok_pinjam }}" required>
-            <div class="invalid-feedback">
-              Stok pinjam produk tidak boleh kosong!
-            </div>
+            <input type="text" class="form-control @error('stok_penjam') is-invalid @enderror" id="stok_pinjam" name="stok_pinjam" value="{{ $product->stok_pinjam }}" required>
+            @error('stok_pinjam')
+            <div class="alert alert-danger mt-1">{{ $message }}</div>
+            @enderror
           </div>
         </div>
         <div class="card-footer text-right">
